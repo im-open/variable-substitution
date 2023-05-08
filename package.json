@@ -16,7 +16,7 @@
     "action",
     "utility"
   ],
-  "author": "Sumiran Aggarwal <suaggar@microsoft.com>, wtw",
+  "author": "wtw,Sumiran Aggarwal <suaggar@microsoft.com>",
   "license": "ISC",
   "devDependencies": {
     "@types/chai": "^4.3.5",
