@@ -52,7 +52,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Update sql connection string in test project
-      uses: microsoft/variable-substitution@v1
+      uses: im-open/variable-substitution@v1.0.0 #v2 or v2.0 can also be used
       with:
         files: './src/MyApp.Tests/appsettings.json'
       env:
@@ -62,7 +62,7 @@ jobs:
         ConnectionStrings.MyApp: 'Server=localhost;Database=MyDB;Trusted_Connection=False;User ID=SA;Password=Abc123!'
 
     - name: run integration tests
-      run: dotnet test --logger trx --no-restore --configuration Release
+      run: dotnet test --no-restore --configuration Release
  ```
 
 #### Configuration file after substitution
