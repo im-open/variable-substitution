@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha -r ts-node/register src/**/*.test.ts",
-    "build": "tsc",
-    "coverage": "nyc npm run test"
+    "build": "tsc && esbuild ./src/variableSubstitution.ts --bundle --platform=node --outfile=lib/variableSubstitution.js && npm run format && git add lib/*",
+    "coverage": "nyc npm run test",
+    "bundle": "esbuild ./src/variableSubstitution.ts --bundle --platform=node --outfile=dist/variableSubstitution.js",
+    "format": "prettier --write **/*.js",
+    "format-check": "prettier --check **/*.js"
   },
   "repository": {
     "type": "git",
@@ -24,8 +27,11 @@
     "@types/mocha": "^5.2.7",
     "@types/node": "^12.20.55",
     "chai": "^4.3.7",
+    "esbuild": "^0.15.10",
+    "install": "^0.13.0",
     "mocha": "^10.2.0",
     "nyc": "^15.1.0",
+    "prettier": "^2.7.1",
     "sinon": "^7.5.0",
     "ts-node": "^8.10.2",
     "typescript": "^3.9.10"
