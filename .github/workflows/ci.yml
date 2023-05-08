@@ -12,8 +12,8 @@ jobs:
           os: [windows-latest, ubuntu-latest, macos-latest]
     steps:
 
-    - name: 'Checking out repo code'
-      uses: actions/checkout@v2
+    # - name: 'Checking out repo code'
+    #   uses: actions/checkout@v3
 
     - name: 'Validate build'
       run: |

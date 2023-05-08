@@ -10,18 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SumiranAgg/filetransform.git"
+    "url": "git+https://github.com/im-open/variable-substitution.git"
   },
   "keywords": [
     "action",
     "utility"
   ],
-  "author": "Sumiran Aggarwal <suaggar@microsoft.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/SumiranAgg/filetransform/issues"
-  },
-  "homepage": "https://github.com/SumiranAgg/filetransform#readme",
+  "author": "Sumiran Aggarwal <suaggar@microsoft.com>, wtw",
+  "license": "ISC",
   "devDependencies": {
     "@types/chai": "^4.2.4",
     "@types/minimatch": "^3.0.3",
