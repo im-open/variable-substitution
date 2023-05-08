@@ -43,7 +43,7 @@ jobs:
       # major/minor/patch through commit messages
       - name: Increment the version
         id: version
-        uses: ./
+        uses: im-open/git-version-lite@v2.3
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           default-release-type: major

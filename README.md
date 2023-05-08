@@ -62,7 +62,7 @@ jobs:
         ConnectionStrings.MyApp: 'Server=localhost;Database=MyDB;Trusted_Connection=False;User ID=SA;Password=Abc123!'
 
     - name: run integration tests
-      run: dotnet test --logger trx --no-restore --configuration Release
+      run: dotnet test --no-restore --configuration Release
  ```
 
 #### Configuration file after substitution
