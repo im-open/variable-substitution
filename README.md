@@ -49,10 +49,10 @@ jobs:
   run-integration-tests:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
 
     - name: Update sql connection string in test project
-      uses: im-open/variable-substitution@v2.0.5 #v2 or v2.0 can also be used
+      uses: im-open/variable-substitution@v2.1.0 #v2 or v2.1 can also be used
       with:
         files: './src/MyApp.Tests/appsettings.json'
       env:
