@@ -34,7 +34,7 @@ jobs:
       # on a pull_request_target.  But we need to be extra careful not to trigger any script
       # that may operate on PR controlled contents like in the case of npm install.
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
         with:
           ref: main
           fetch-depth: 0
@@ -43,7 +43,7 @@ jobs:
       # major/minor/patch through commit messages
       - name: Increment the version
         id: version
-        uses: im-open/git-version-lite@v2.3
+        uses: im-open/git-version-lite@a0ce51e3a994785c2897d9e46e7d8b5b3fe98b39
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           default-release-type: major

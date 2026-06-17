@@ -27,10 +27,10 @@
     "@types/mocha": "^5.2.7",
     "@types/node": "^12.20.55",
     "chai": "^4.3.7",
-    "esbuild": "^0.15.10",
+    "esbuild": "^0.28.1",
     "install": "^0.13.0",
-    "mocha": "^10.2.0",
-    "nyc": "^15.1.0",
+    "mocha": "^11.7.6",
+    "nyc": "^18.0.0",
     "prettier": "^2.7.1",
     "sinon": "^7.5.0",
     "ts-node": "^8.10.2",
@@ -38,8 +38,13 @@
   },
   "dependencies": {
     "@actions/core": "^1.10.0",
-    "js-yaml": "^3.14.1",
+    "js-yaml": "^4.2.0",
     "ltx": "^2.10.0",
     "minimatch": "^4.0.0"
+  },
+  "overrides": {
+      "diff": "^9.0.0",
+      "js-yaml": "$js-yaml",
+      "serialize-javascript": "^7.0.5"
   }
 }
