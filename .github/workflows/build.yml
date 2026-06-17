@@ -21,15 +21,15 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
         with:
           ref: ${{ github.head_ref }}
           fetch-depth: 0
 
-      - name: Setup Node.js 16
-        uses: actions/setup-node@v3
+      - name: Setup Node.js 24
+        uses: actions/setup-node@v6
         with:
-          node-version: 16.x
+          node-version: 24.x
 
       # If this step results in changes, they will be committed in the last step
       - name: Recompile and Build action
@@ -85,7 +85,7 @@ jobs:
       - name: Check for code changes to the action
         if: runner.os == 'Linux'
         id: action-code
-        uses: im-open/did-custom-action-code-change@v1.0.1
+        uses: im-open/.github/.github/actions/did-custom-action-code-change@41de4b57fe9b05adea689e184c22ae4a1e79f761
         with:
           files-with-code: "action.yml,package.json,package-lock.json"
           folders-with-code: "src,lib"
@@ -94,11 +94,11 @@ jobs:
       - name: Get the next version for the readme if there are code changes to the action
         if: runner.os == 'Linux' && steps.action-code.outputs.HAS_CHANGES == 'true'
         id: version
-        uses: im-open/git-version-lite@v2.3
+        uses: im-open/git-version-lite@53c32b30ae5eb114b11e038f6f0e79dfb01d7c57
 
       - name: Update readme with next version if there are code changes to the action
         if: runner.os == 'Linux' && steps.action-code.outputs.HAS_CHANGES == 'true'
-        uses: im-open/update-action-version-in-file@v1.0.0
+        uses: im-open/.github/.github/actions/update-action-version-in-file@41de4b57fe9b05adea689e184c22ae4a1e79f761
         with:
           file-to-update: "./README.md"
           action-name: ${{ github.repository }}

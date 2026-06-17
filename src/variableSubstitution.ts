@@ -114,7 +114,7 @@ export class VariableSubstitution {
     
     private isYaml(file: string, content: string) : boolean {
         try {
-            let yamlObject = yaml.safeLoad(content);
+            let yamlObject = yaml.load(content);
             if(!this.fileContentCache.has(file)) {
                 this.fileContentCache.set(file, yamlObject);
             }

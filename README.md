@@ -52,7 +52,7 @@ jobs:
     - uses: actions/checkout@v4
 
     - name: Update sql connection string in test project
-      uses: im-open/variable-substitution@v2.1.1 #v2 or v2.1 can also be used
+      uses: im-open/variable-substitution@v3.0.0 #v3 or v3.0 can also be used 
       with:
         files: './src/MyApp.Tests/appsettings.json'
       env:
